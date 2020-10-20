@@ -23,7 +23,7 @@ subdir('src')
 lapack = dependency('lapack', required: false)
 if not lapack.found()
   lapack_proj = subproject('lapack')
-  lapack = lapack_proj.get_variable('lapack')
+  lapack = lapack_proj.get_variable('lapack_dep')
 endif
 
 lapack95 = library(
