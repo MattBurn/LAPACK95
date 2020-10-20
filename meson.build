@@ -32,6 +32,7 @@ lapack95 = library('lapack95',
 
 lapack95_dep = declare_dependency(
   link_with: lapack95,
+  dependencies: lapack
 )
 
 # --- generate pkg-config
