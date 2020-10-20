@@ -30,9 +30,16 @@ lapack95 = library('lapack95',
   dependencies: lapack,
   install : true)
 
-lapack95_inc = tomlf_lib.private_dir_include()
+lapack95_lib = library(
+  meson.project_name(),
+  sources: [src, aux],
+  version: meson.project_version(),
+  install: false,
+)
+
+lapack95_inc = lapack95_lib.private_dir_include()
 lapack95_dep = declare_dependency(
-  link_with: lapack95,
+  link_with: lapack95_lib,
   include_directories: lapack95_inc
 )
 
