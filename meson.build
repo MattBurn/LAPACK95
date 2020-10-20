@@ -33,16 +33,9 @@ lapack95 = library(
   install : install
 )
 
-lapack95_lib = library(
-  'lapack95',
-  sources: [src, aux],
-  dependencies: lapack,
-  install : install
-)
-
-lapack95_inc = lapack95_lib.private_dir_include()
+lapack95_inc = lapack95.private_dir_include()
 lapack95_dep = declare_dependency(
-  link_with: lapack95_lib,
+  link_with: lapack95,
   include_directories: lapack95_inc
 )
 
