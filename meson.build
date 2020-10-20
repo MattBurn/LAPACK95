@@ -5,6 +5,7 @@ project('LAPACK95', 'fortran',
   version : '1.0.0',
   meson_version: '>=0.50')
 
+install = not (meson.is_subproject() and get_option('default_library') == 'static')
 fc = meson.get_compiler('fortran')
 if fc.get_id() == 'gcc'
   add_project_arguments( '-fimplicit-none','-Wno-tabs', '-Wno-conversion', '-Wno-unused-label', language : 'fortran')
@@ -25,21 +26,16 @@ if not lapack.found()
   lapack = lapack_proj.get_variable('lapack')
 endif
 
-lapack95 = library('lapack95',
+lapack95 = library(
+  'lapack95',
   sources: [src, aux],
   dependencies: lapack,
-  install : true)
-
-lapack95_lib = library(
-  meson.project_name(),
-  sources: [src, aux],
-  version: meson.project_version(),
-  install: false,
+  install : install
 )
 
-lapack95_inc = lapack95_lib.private_dir_include()
+lapack95_inc = lapack95.private_dir_include()
 lapack95_dep = declare_dependency(
-  link_with: lapack95_lib,
+  link_with: lapack95,
   include_directories: lapack95_inc
 )
 
