@@ -30,9 +30,10 @@ lapack95 = library('lapack95',
   dependencies: lapack,
   install : true)
 
+lapack95_inc = tomlf_lib.private_dir_include()
 lapack95_dep = declare_dependency(
   link_with: lapack95,
-  dependencies: lapack
+  include_directories: lapack95_inc
 )
 
 # --- generate pkg-config
