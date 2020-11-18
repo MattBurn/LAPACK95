@@ -10,6 +10,13 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules)
 
 set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/include)
 
+set(BUILD_SHARED_LIBS OFF)
+add_subdirectory("subprojects/lapack")
+list(
+  APPEND lib-deps
+  "lapack-lib"
+)
+
 if(NOT arith)
   # only one precision at a time
   set(arith "d")
@@ -27,7 +34,8 @@ add_library(LAPACK::LAPACK95 ALIAS lapack95)
 find_package(LAPACK REQUIRED)
 
 add_executable(gbsv ${CMAKE_CURRENT_SOURCE_DIR}/EXAMPLES1/la_gbsv_example.f90)
-target_link_libraries(gbsv PRIVATE LAPACK::LAPACK95 LAPACK::LAPACK)
+# target_link_libraries(gbsv PRIVATE LAPACK::LAPACK95 LAPACK::LAPACK)
+target_link_libraries(gbsv lib-deps)
 add_test(NAME GBSV COMMAND $<TARGET_FILE:gbsv> ${CMAKE_CURRENT_SOURCE_DIR}/EXAMPLES1)
 
 # Install
