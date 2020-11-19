@@ -1,0 +1,1 @@
+{"version": "1.0.0", "descriptive_name": "LAPACK95", "subproject_dir": "subprojects", "subprojects": [{"name": "lapack", "version": "3.9.0", "descriptive_name": "LAPACK"}]}

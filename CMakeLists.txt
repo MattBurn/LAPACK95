@@ -26,6 +26,7 @@ endif()
 set(srcs)
 add_subdirectory(src)
 add_library(lapack95-lib ${srcs})
+target_link_libraries(lapack95-lib lapack-lib)
 # target_include_directories(lapack95 PUBLIC ${CMAKE_Fortran_MODULE_DIRECTORY})
 # target_compile_options(lapack95 PRIVATE ${FFLAGS})
 # set_target_properties(lapack95 PROPERTIES

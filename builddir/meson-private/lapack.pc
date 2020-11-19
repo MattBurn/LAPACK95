@@ -1,0 +1,10 @@
+prefix=/usr/local
+libdir=${prefix}/lapack95/lib
+includedir=${prefix}/lapack95/include
+
+Name: lapack
+Description: Netlib LAPACK
+URL: https://github.com/Reference-LAPACK/lapack
+Version: 3.9.0
+Libs: -L${libdir} -llapack
+Cflags: -I${includedir}/lapack

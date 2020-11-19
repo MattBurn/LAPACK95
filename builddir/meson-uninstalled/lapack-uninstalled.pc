@@ -1,0 +1,9 @@
+prefix=/home/mfbx4mb9/src/LAPACK95/builddir
+srcdir=/home/mfbx4mb9/src/LAPACK95
+
+Name: lapack
+Description: Netlib LAPACK
+URL: https://github.com/Reference-LAPACK/lapack
+Version: 3.9.0
+Libs: -L${prefix}/subprojects/lapack -llapack
+Cflags: -I${prefix}/subprojects/lapack -I${srcdir}/subprojects/lapack

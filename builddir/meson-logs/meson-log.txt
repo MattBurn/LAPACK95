@@ -1,0 +1,159 @@
+Build started at 2020-11-19T12:19:08.357770
+Main binary: /home/mfbx4mb9/anaconda3/bin/python
+Build Options: -Dbuildtype=debug
+Python system: Linux
+The Meson build system
+Version: 0.55.3
+Source dir: /home/mfbx4mb9/src/LAPACK95
+Build dir: /home/mfbx4mb9/src/LAPACK95/builddir
+Build type: native build
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Project name: LAPACK95
+Project version: 1.0.0
+None of 'FC' are defined in the environment, not changing global flags.
+None of 'FFLAGS' are defined in the environment, not changing global flags.
+None of 'LDFLAGS' are defined in the environment, not changing global flags.
+None of 'FC_LD' are defined in the environment, not changing global flags.
+None of 'F_LD' are defined in the environment, not changing global flags.
+Fortran compiler for the build machine: gfortran (gcc 4.8.5 "GNU Fortran (GCC) 4.8.5 20150623 (Red Hat 4.8.5-16)")
+Fortran linker for the build machine: gfortran ld.bfd 2.25.1-32
+None of 'AR' are defined in the environment, not changing global flags.
+None of 'FC' are defined in the environment, not changing global flags.
+None of 'FFLAGS' are defined in the environment, not changing global flags.
+None of 'LDFLAGS' are defined in the environment, not changing global flags.
+None of 'FC_LD' are defined in the environment, not changing global flags.
+None of 'F_LD' are defined in the environment, not changing global flags.
+Fortran compiler for the host machine: gfortran (gcc 4.8.5 "GNU Fortran (GCC) 4.8.5 20150623 (Red Hat 4.8.5-16)")
+Fortran linker for the host machine: gfortran ld.bfd 2.25.1-32
+None of 'AR' are defined in the environment, not changing global flags.
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Target machine cpu family: x86_64
+Target machine cpu: x86_64
+Pkg-config binary for MachineChoice.HOST is not cached.
+None of 'PKG_CONFIG' are defined in the environment, not changing global flags.
+Pkg-config binary missing from cross or native file, or env var undefined.
+Trying a default Pkg-config fallback at pkg-config
+Found pkg-config: /usr/bin/pkg-config (0.27.1)
+Determining dependency 'lapack' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion lapack` -> 1
+
+CMake binary for MachineChoice.HOST is not cached
+None of 'CMAKE' are defined in the environment, not changing global flags.
+CMake binary missing from cross or native file, or env var undefined.
+Trying a default CMake fallback at cmake
+Did not find CMake 'cmake'
+Found CMake: NO
+No CMake binary for machine MachineChoice.HOST not found. Giving up.
+Run-time dependency lapack found: NO (tried pkgconfig and cmake)
+
+Executing subproject lapack method meson 
+
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Project name: LAPACK
+Project version: 3.9.0
+Fortran compiler for the build machine: gfortran (gcc 4.8.5 "GNU Fortran (GCC) 4.8.5 20150623 (Red Hat 4.8.5-16)")
+Fortran linker for the build machine: gfortran ld.bfd 2.25.1-32
+None of 'CC' are defined in the environment, not changing global flags.
+None of 'CFLAGS' are defined in the environment, not changing global flags.
+None of 'LDFLAGS' are defined in the environment, not changing global flags.
+None of 'CPPFLAGS' are defined in the environment, not changing global flags.
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Sanity testing C compiler: cc
+Is cross compiler: False.
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Sanity check compiler command line: cc /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/sanitycheckc.c -o /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/sanitycheckc.exe -pipe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/sanitycheckc.exe
+C compiler for the build machine: cc (gcc 4.8.5 "cc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-16)")
+C linker for the build machine: cc ld.bfd 2.25.1-32
+Fortran compiler for the host machine: gfortran (gcc 4.8.5 "GNU Fortran (GCC) 4.8.5 20150623 (Red Hat 4.8.5-16)")
+Fortran linker for the host machine: gfortran ld.bfd 2.25.1-32
+None of 'CC' are defined in the environment, not changing global flags.
+None of 'CFLAGS' are defined in the environment, not changing global flags.
+None of 'LDFLAGS' are defined in the environment, not changing global flags.
+None of 'CPPFLAGS' are defined in the environment, not changing global flags.
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Sanity testing C compiler: cc
+Is cross compiler: False.
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Sanity check compiler command line: cc /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/sanitycheckc.c -o /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/sanitycheckc.exe -pipe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/sanitycheckc.exe
+C compiler for the host machine: cc (gcc 4.8.5 "cc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-16)")
+C linker for the host machine: cc ld.bfd 2.25.1-32
+subprojects/lapack/meson.build:7: WARNING: Option 'arith' of type 'array' in subproject 'lapack' cannot yield to parent option of type 'string', ignoring parent value. Use -Dlapack:arith=value to set the value for this option manually.
+Running compile:
+Working directory:  /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/tmp7fo246il
+Command line:  gfortran /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/tmp7fo246il/testfile.f90 -o /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/tmp7fo246il/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -w 
+
+Code:
+ stop; end program
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for Fortran supports arguments -w: YES 
+First supported argument: -w
+Adding test "BLAS NRM2"
+None of 'FC_LD' are defined in the environment, not changing global flags.
+None of 'F_LD' are defined in the environment, not changing global flags.
+Running compile:
+Working directory:  /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/tmpufbgyvih
+Command line:  gfortran /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/tmpufbgyvih/testfile.f90 -o /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/tmpufbgyvih/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+
+Code:
+ x=norm2([0.]); end
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Checking if "F2008 norm2" links: YES 
+Adding test "dGESV"
+Adding test "sGESV"
+Build targets in project: 5
+Subproject lapack finished.
+
+Adding test "GBSV"
+Build targets in project: 7
+
+LAPACK95 1.0.0
+
+  Subprojects
+    lapack: YES 1 warnings
+
+Option libdir is: lapack95/lib [default: lapack95/lib/]
+Option buildtype is: debug [default: release]
+Found ninja-1.9.0 at /home/mfbx4mb9/anaconda3/bin/ninja
+Running compile:
+Working directory:  /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/tmp06wm3gsm
+Command line:  gfortran /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/tmp06wm3gsm/testfile.f90 -o /home/mfbx4mb9/src/LAPACK95/builddir/meson-private/tmp06wm3gsm/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+
+Code:
+ 
+Compiler stdout:
+ install: /usr/lib/gcc/x86_64-redhat-linux/4.8.5/
+programs: =/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/:/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../x86_64-redhat-linux/bin/x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../x86_64-redhat-linux/bin/
+libraries: =/usr/lib/gcc/x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../x86_64-redhat-linux/lib/x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../x86_64-redhat-linux/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/:/lib/x86_64-redhat-linux/4.8.5/:/lib/../lib64/:/usr/lib/x86_64-redhat-linux/4.8.5/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../x86_64-redhat-linux/lib/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../:/lib/:/usr/lib/
+
+Compiler stderr:
+ 
+None of 'STRIP' are defined in the environment, not changing global flags.
+Command line for building ['subprojects/lapack/liblapack.a'] is long, using a response file
+Command line for building ['liblapack95.a'] is long, using a response file
+None of 'STRIP' are defined in the environment, not changing global flags.

@@ -1,0 +1,10 @@
+prefix=/usr/local
+libdir=${prefix}/lapack95/lib
+includedir=${prefix}/lapack95/include
+
+Name: lapack95
+Description: Netlib LAPACK95
+URL: https://github.com/scivision/LAPACK95
+Version: 1.0.0
+Libs: -L${libdir} -llapack95
+Cflags: -I${includedir}/lapack95
