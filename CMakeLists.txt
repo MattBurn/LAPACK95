@@ -31,6 +31,22 @@ set_target_properties(lapack95 PROPERTIES
   ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
 add_library(lib-deps ALIAS lapack95)
 
+set_target_properties(
+  "lapack95-lib"
+  PROPERTIES
+  POSITION_INDEPENDENT_CODE TRUE
+  OUTPUT_NAME "${PROJECT_NAME}"
+  VERSION "${PROJECT_VERSION}"
+  SOVERSION "${PROJECT_VERSION_MAJOR}"
+  Fortran_MODULE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/include"
+)
+target_include_directories(
+  "lapack95-lib"
+  INTERFACE
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
+  $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+)
+
 if(NOT is-subproject OR BUILD_SHARED_LIBS)
   add_executable(gbsv ${CMAKE_CURRENT_SOURCE_DIR}/EXAMPLES1/la_gbsv_example.f90)
   # target_link_libraries(gbsv PRIVATE LAPACK::LAPACK95 LAPACK::LAPACK)
