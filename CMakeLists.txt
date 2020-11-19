@@ -23,8 +23,9 @@ if(NOT arith)
   set(arith "d")
 endif()
 
-add_library(lapack95)
+set(srcs)
 add_subdirectory(src)
+add_library(lapack95 ${srcs})
 target_include_directories(lapack95 PUBLIC ${CMAKE_Fortran_MODULE_DIRECTORY})
 target_compile_options(lapack95 PRIVATE ${FFLAGS})
 set_target_properties(lapack95 PROPERTIES
