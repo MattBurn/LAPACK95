@@ -31,6 +31,7 @@ set_target_properties(lapack95 PROPERTIES
   ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
 add_library(lib-deps ALIAS lapack95)
 
+add_library(lapack95-lib ALIAS lapack95)
 set_target_properties(
   "lapack95-lib"
   PROPERTIES
