@@ -1,4 +1,0 @@
-[wrap-git]
-directory = lapack
-url = https://github.com/MattBurn/lapack.git
-revision = head
