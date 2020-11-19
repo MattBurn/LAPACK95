@@ -1,0 +1,3 @@
+[submodule "subprojects/lapack"]
+	path = subprojects/lapack
+	url = git@github.com:MattBurn/lapack.git
