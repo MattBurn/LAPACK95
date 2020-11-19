@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.13)  # 3.13 target_sources absolute
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release CACHE STRING "Debug or Release")
 endif()
+get_directory_property(is-subproject PARENT_DIRECTORY)
 project(LAPACK95 C Fortran)
 enable_testing()
 
@@ -28,21 +29,20 @@ target_include_directories(lapack95 PUBLIC ${CMAKE_Fortran_MODULE_DIRECTORY})
 target_compile_options(lapack95 PRIVATE ${FFLAGS})
 set_target_properties(lapack95 PROPERTIES
   ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
-add_library(LAPACK::LAPACK95 ALIAS lapack95)
+add_library(lib-deps ALIAS lapack95)
 
-# Test
-find_package(LAPACK REQUIRED)
-
-add_executable(gbsv ${CMAKE_CURRENT_SOURCE_DIR}/EXAMPLES1/la_gbsv_example.f90)
-# target_link_libraries(gbsv PRIVATE LAPACK::LAPACK95 LAPACK::LAPACK)
-target_link_libraries(gbsv lib-deps)
-add_test(NAME GBSV COMMAND $<TARGET_FILE:gbsv> ${CMAKE_CURRENT_SOURCE_DIR}/EXAMPLES1)
-
-# Install
-
-install(TARGETS lapack95
-        LIBRARY DESTINATION lib
-        ARCHIVE DESTINATION lib)
-
-install(DIRECTORY ${CMAKE_Fortran_MODULE_DIRECTORY}/ # don't omit trailing slash
-        DESTINATION include)
+if(NOT is-subproject OR BUILD_SHARED_LIBS)
+  add_executable(gbsv ${CMAKE_CURRENT_SOURCE_DIR}/EXAMPLES1/la_gbsv_example.f90)
+  # target_link_libraries(gbsv PRIVATE LAPACK::LAPACK95 LAPACK::LAPACK)
+  target_link_libraries(gbsv lib-deps)
+  add_test(NAME GBSV COMMAND $<TARGET_FILE:gbsv> ${CMAKE_CURRENT_SOURCE_DIR}/EXAMPLES1)
+  
+  # Install
+  
+  install(TARGETS lapack95
+          LIBRARY DESTINATION lib
+          ARCHIVE DESTINATION lib)
+  
+  install(DIRECTORY ${CMAKE_Fortran_MODULE_DIRECTORY}/ # don't omit trailing slash
+          DESTINATION include)
+endif()
